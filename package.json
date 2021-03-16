@@ -1,16 +1,14 @@
 {
-  "name": "to-do",
+  "name": "e-Lista",
   "version": "1.0.0",
   "description": "Egy webes applikáció amelyben bevásárlói listát lehet létrehozni.",
   
   "keywords": [
-    "To-Do",
-    "webes",
-    "applikáció",
-    "applikáció",
+    "e-Lista",
+    "webes applikáció",
     "web",
-    "bevásárlói",
-    "lista"
+    "applikáció",
+    "bevásárlói lista"
   ],
 
   "author": "Király Sándor <sandorkiraly.dev@gmail.com>",

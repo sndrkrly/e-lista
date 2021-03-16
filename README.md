@@ -1,4 +1,4 @@
-<h1 align="center"><b>to-do</b></h1>
+<h1 align="center"><b>e-Lista</b> 🚀</h1>
 <p align="center">
 	Egy webes applikáció amelyben bevásárlói listát lehet létrehozni.
 </p>
