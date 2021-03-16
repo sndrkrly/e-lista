@@ -1,0 +1,60 @@
+/* 
+    Created by Király Sándor on 03/16/21.
+
+    Copyright © Király Sándor.
+    All rights reserved.
+*/
+
+#footer {
+    background: var(--darkerblue);
+}
+
+#footer .content {
+    padding: 72px 72px 0 72px;
+    margin: 0 auto;
+
+    max-width: 1288px;
+    height: 200px;
+    
+    box-sizing: border-box;
+}
+
+#footer .author {
+    font-size: 15px;
+    color: #697A88;
+
+    letter-spacing: 0.5px;
+    line-height: 19px;
+
+    text-transform: uppercase;
+    text-align: center;
+    float: center;
+}
+
+#footer .author a {
+    font-size: 14px;
+    color: #697A88;
+}
+
+@media (max-width: 1024px) {
+    #footer .content {
+        height: auto;
+        padding: 72px 16px;
+    }
+
+    #footer .author {
+        float: inherit;
+        text-align: center;
+    }
+}
+
+@media (max-width: 490px) {
+    #footer .content {
+        padding: 50px 16px;
+    }
+
+    #footer .author {
+        font-size: 13px;
+        margin-top: 40px;
+    }
+}

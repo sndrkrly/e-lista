@@ -1,0 +1,99 @@
+/* 
+    Created by Király Sándor on 03/16/21.
+
+    Copyright © Király Sándor.
+    All rights reserved.
+*/
+
+/* 
+    Imported fonts
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
+/*
+    Ne foglalkozz vele:)
+    => #2965c0
+*/
+
+/* 
+    Root colors
+*/
+
+:root {
+    --white: #fff;
+
+    --indigo: #622aff;
+    --blue: #0e90db;
+    --pink: #e94256;
+    --green: #0b9e43;
+    --azure: #86868b;
+
+    --lighterblack: #212121;
+    --darkerblue: #21272E;
+}
+
+/* 
+    Body 
+*/
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #f7f7f7;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    scroll-behavior: smooth;
+
+    padding: 0;
+    margin: 0;
+}
+
+/* 
+    Selection 
+*/
+
+::selection {
+    background-color: #0097fc;
+    color: var(--white);
+    
+    text-shadow: none;
+}
+
+/* 
+    Link 
+*/
+
+a {
+    letter-spacing: inherit;
+
+    text-decoration: none;
+    text-shadow: none;
+    
+    font-size: 18px;
+    color: #06c;
+}
+
+/* 
+    Wrapper 
+*/
+
+.wrapper {
+    width: 100%;
+}
+
+/* 
+    Wrapper
+    separator
+*/
+
+.wrapper .separator {
+    margin-top: 50px;
+
+    max-width: 916px;
+    height: 2px;
+
+    margin: 50 auto;
+    padding: 0 54px;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "to-do",
+  "version": "1.0.0",
+  "description": "Egy webes applikáció amelyben bevásárlói listát lehet létrehozni.",
+  
+  "keywords": [
+    "To-Do",
+    "webes",
+    "applikáció",
+    "applikáció",
+    "web",
+    "bevásárlói",
+    "lista"
+  ],
+
+  "author": "Király Sándor <sandorkiraly.dev@gmail.com>",
+}

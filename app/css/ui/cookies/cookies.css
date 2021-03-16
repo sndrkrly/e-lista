@@ -1,0 +1,106 @@
+/* 
+    Created by Király Sándor on 03/16/21.
+
+    Copyright © Király Sándor.
+    All rights reserved.
+*/
+
+#cookie {
+    display: none;
+
+    box-sizing: border-box;
+
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+
+    align-items: center;
+    /* display: flex; */
+    
+    justify-content: center;
+
+    animation: reveal-a 0.5s 0s ease-in-out forwards;
+}
+
+#cookie .content {
+    margin-bottom: 15px;
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+
+    border-color: #212529;
+    background: #212529;
+
+    height: 60px;
+    width: 600px;
+}
+
+#cookie .content .title {
+    margin-left: 45px;
+    margin-top: 12px;
+
+    font-size: 15px;
+    color: white;
+}
+
+#cookie .content .title a {
+    text-decoration: none;
+    cursor: default;
+
+    font-size: 15px;
+    color: grey;
+}
+
+#cookie .content .icon {
+    display: block;
+    float: left;
+
+    margin-left: 5px;
+    margin-top: 15px;
+
+    height: 25px;
+    width: 25px;
+}
+
+#cookie .content .close {
+    display: block;
+    float: right;
+
+    margin-right: 8px;
+    margin-top: 20px;
+
+    height: 25px;
+    width: 25px;
+
+    cursor: pointer;
+}
+
+#cookie .content.close-animation {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+/* 
+    Keyframes
+*/
+
+@keyframes reveal-a {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    } 
+}
