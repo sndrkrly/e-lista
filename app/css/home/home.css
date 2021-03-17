@@ -12,7 +12,7 @@
     margin: 0 auto;
     
     width: 380px;
-    height: 50px;
+    height: 400px;
 }
 
 .header {
@@ -31,7 +31,7 @@
     position: relative;
 }
 
-.header .refresh-list {
+.header .undo-list {
     width : 30px;
     height: 30px;
 
@@ -41,12 +41,12 @@
     position: absolute;
 }
 
-.header .refresh-list i {
+.header .undo-list i {
     font-size: 25px;
     color: var(--white);
 }
 
-.header .refresh-list i:hover {
+.header .undo-list i:hover {
     opacity: 70%;
     cursor: pointer;
 }

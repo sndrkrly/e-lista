@@ -30,14 +30,12 @@ function loadList(array) {
     });
 }
 
-$(".header .refresh-list").bind("click", function() {
+$(".header .undo-list").bind("click", function() {
     let hasItems = localStorage.getItem("TODO");
 
     if (hasItems) {
         localStorage.clear();
         location.reload();
-
-        // $(".header .title").html("Lista #" + (id++));
     } else {
         console.log("üres, nincs mit törölni");
     }
