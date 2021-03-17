@@ -51,15 +51,19 @@ function checkCookie() {
     if (status == 1) {
         $('#cookie').css("display", "none");
     } else {
-        $('#cookie').css("display", "flex");
-        $('#cookie .content .close').click(function() {
-            $('#cookie .content').addClass('close-animation');
-                
-            setTimeout(function() {
-                $('#cookie .content').css("display", "none");
-            }, 1000);
+        if (/Mobi|Tablet|iPad|iPhone/.test(navigator.userAgent)) {
+            return;
+        } else {
+            $('#cookie').css("display", "flex");
+            $('#cookie .content .close').click(function() {
+                $('#cookie .content').addClass('close-animation');
+                    
+                setTimeout(function() {
+                    $('#cookie .content').css("display", "none");
+                }, 1000);
 
-            initCookie("cookie-status", 1, 30);
-        });
+                initCookie("cookie-status", 1, 30);
+            });
+        }
     }
 };
