@@ -78,7 +78,13 @@ $(document).bind("keyup", function(event) {
         var thingToShop = $(".add-to-do input").val();
 
         if (thingToShop.length > 0 && thingToShop != "Elem hozzáadása") {
-            if (thingToShop.length < 28) {
+            var maximumLenght = 28;
+
+            if (/Mobi|Tablet|iPad|iPhone/.test(navigator.userAgent)) {
+                maximumLenght = 40;
+            }
+            
+            if (thingToShop.length < maximumLenght) {
                 addToDo(thingToShop, id, false, false);
                 
                 LIST.push({
