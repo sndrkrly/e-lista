@@ -1,0 +1,12 @@
+{
+  "name": "e-Lista",
+  "version": "1.0.0",
+  "description": "Egy webes applikáció amelyben bevásárlói listát lehet létrehozni.",
+  "keywords": [
+    "shop",
+    "webshop",
+    "social network",
+    "social network webshop",
+  ],
+  "author": "Király Sándor <sandorkiraly.dev@gmail.com>",
+}
