@@ -41,12 +41,16 @@ $(".header .refresh-list").bind("click", function() {
     }
 });
 
-const dateElement = document.getElementById("date");
+$(document).ready(function() {
+    const currentDate = new Date();
+    const dateOptions = {
+        weekday : "long", 
+        month: "long", 
+        day: "numeric"
+    };
 
-const options = {weekday : "long", month:"short", day:"numeric"};
-const today = new Date();
-
-dateElement.innerHTML = today.toLocaleDateString("hu-HU", options);
+    $(".header .date").html(currentDate.toLocaleDateString("hu-HU", dateOptions));
+});
 
 function addToDo(toDo, id, done, trash) {
     if (trash) { return; }
@@ -67,10 +71,9 @@ function addToDo(toDo, id, done, trash) {
 
 $(document).bind("keyup", function(event) {
     if (event.keyCode == 13) {
-        const toDo = $("#input").val();
-        console.log(toDo);
+        var toDo = $(".add-to-do input").val();
 
-        if (toDo) {
+        if (toDo.length > 0 && toDo != "Elem hozzáadása") {
             addToDo(toDo, id, false, false);
             
             LIST.push({
@@ -85,7 +88,7 @@ $(document).bind("keyup", function(event) {
             id++;
         }
 
-        input.value = "";
+        $(".add-to-do input").val("");
     }
 });
 
@@ -115,4 +118,8 @@ $("#list").bind("click", function() {
     }
     
     localStorage.setItem("TODO", JSON.stringify(LIST));
+});
+
+$(".header .save-list").bind("click", function() {
+    console.log("mentve a lista");
 });

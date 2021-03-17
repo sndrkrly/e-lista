@@ -6,8 +6,6 @@
 */
 
 .container {
-    animation: fade-in 1s 0s ease-in-out forwards;
-
     padding: 30px;
     margin: 0 auto;
     
@@ -26,8 +24,8 @@
     position: relative;
 }
 
-.header .refresh-list {
-    width : 30px;
+.header .back {
+    width: 30px;
     height: 30px;
 
     left: 20px;
@@ -36,110 +34,24 @@
     position: absolute;
 }
 
-.header .refresh-list i {
-    font-size: 25px;
+.header .back a {
+    text-decoration: none;
     color: var(--white);
+    font-size: 25px;
 }
 
-.header .refresh-list i:hover {
+.header .back a:hover {
     opacity: 70%;
     cursor: pointer;
 }
 
-.header .save-list {
-    width : 30px;
-    height: 30px;
-
-    right: 20px;
-    top: 20px;
-
+.header .title {
     position: absolute;
-}
 
-.header .save-list i {
-    font-size: 25px;
-    color: var(--white);
-}
-
-.header .save-list i:hover {
-    opacity: 70%;
-    cursor: pointer;
-}
-
-.header .saved-list {
-    width : 30px;
-    height: 30px;
-
-    right: 55px;
-    top: 20px;
-
-    position: absolute;
-}
-
-.header .saved-list i {
-    font-size: 25px;
-    color: var(--white);
-}
-
-.header .saved-list i:hover {
-    opacity: 70%;
-    cursor: pointer;
-}
-
-.header .title input {
-    height: 35px;
-    width: 310px;
-
-    position: absolute;
-    left: 19px;
-    top: 80px;
-
-    background-color: transparent;
-    font-size: 20px;
-    border: none;
-
-    color: var(--white);
-    opacity: 100%;
-}
-
-.header .title input::-webkit-input-placeholder {
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
-
-    color: var(--white);
-    opacity: 70%;
-}
-
-.header .title input::-moz-placeholder {
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
-
-    color: var(--white);
-    opacity: 70%;
-}
-
-.header .title input:-ms-input-placeholder {
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
-
-    color: var(--white);
-    opacity: 70%;
-}
-
-.header .title input:-moz-placeholder {
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
-
-    color: var(--white);
-    opacity: 70%;
-}
-
-.header .date {
-    position: absolute;
+    bottom: 100px;
     left: 20px;
-    top: 110px;
 
-    font-size: 25px;
+    font-size: 20px;
     color: var(--white);
 }
 
@@ -160,8 +72,6 @@
     padding: 0;
     margin: 0;
 }
-
-/* Items */
 
 .item {
     width: 380px;
@@ -227,8 +137,6 @@
     color: var(--pink);
     cursor: pointer;
 }
-
-/* Input */
 
 .add-to-do {
     position: relative;
@@ -300,20 +208,6 @@
     color: var(--white);
     opacity: 70%;
 }
-
-/* Keyframes */
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Responsive */
 
 @media (max-width: 680px) {
     .container {

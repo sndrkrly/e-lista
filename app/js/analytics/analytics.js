@@ -5,6 +5,7 @@
     All rights reserved.
 */
 
+/*
 (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
     i[r] = i[r] || function () {
@@ -20,3 +21,4 @@
 
 ga('create', 'UA-84226522-3', 'auto');
 ga('send', 'pageview');
+*/
