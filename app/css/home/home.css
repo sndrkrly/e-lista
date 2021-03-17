@@ -86,6 +86,23 @@
     cursor: pointer;
 }
 
+.header .popup {
+    position: absolute;
+
+    height: 35px;
+    width: 310px;
+
+    left: 20px;
+    top: 80px;
+
+    background-color: transparent;
+    font-size: 20px;
+    border: none;
+
+    color: var(--white);
+    opacity: 100%;
+}
+
 .header .title input {
     position: absolute;
 

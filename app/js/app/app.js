@@ -77,17 +77,25 @@ $(document).bind("keyup", function(event) {
         var thingToShop = $(".add-to-do input").val();
 
         if (thingToShop.length > 0 && thingToShop != "Elem hozzáadása") {
-            addToDo(thingToShop, id, false, false);
-            
-            LIST.push({
-                name : thingToShop,
-                id : id,
-                done : false,
-                trash : false
-            });
-            
-            localStorage.setItem("TODO", JSON.stringify(LIST));     
-            id++;
+            if (thingToShop.length < 28) {
+                addToDo(thingToShop, id, false, false);
+                
+                LIST.push({
+                    name : thingToShop,
+                    id : id,
+                    done : false,
+                    trash : false
+                });
+                
+                localStorage.setItem("TODO", JSON.stringify(LIST));     
+                id++;
+            } else {
+                $(".header .popup").html("Túl hosszú név!");
+
+                setTimeout(function() {
+                    $(".header .popup").html("");
+                }, 1000);
+            }
         }
 
         $(".add-to-do input").val("");
@@ -121,15 +129,3 @@ $("#list").bind("click", function() {
     
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
-
-/*
-$(".header .save-list").bind("click", function() {
-    $(".header .popup").css("display", "unset");
-    $(".header .popup").html("Elmentve!");
-    $('.header .popup').addClass('close-animation');
-     
-    setTimeout(function() {
-        $('.header .popup').css("display", "none");
-    }, 1000);
-});
-*/
