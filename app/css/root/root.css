@@ -21,7 +21,8 @@
 }
 
 body {
-    background-color: #f7f7f7;
+    background-color: var(--darkerblue); 
+    /* #f7f7f7; */
 
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;

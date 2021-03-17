@@ -30,9 +30,15 @@ function loadList(array) {
     });
 }
 
-$(".header .refresh").click(function() {
-    localStorage.clear();
-    location.reload();
+$(".header .refresh-list").bind("click", function() {
+    let hasItems = localStorage.getItem("TODO");
+
+    if (hasItems) {
+        localStorage.clear();
+        location.reload();
+    } else {
+        console.log("üres, nincs mit törölni");
+    }
 });
 
 const dateElement = document.getElementById("date");

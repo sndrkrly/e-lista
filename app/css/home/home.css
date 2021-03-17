@@ -6,7 +6,7 @@
 */
 
 .container {
-    padding: 10px;
+    padding: 30px;
     margin: 0 auto;
     
     width: 380px;
@@ -103,7 +103,7 @@
 }
 
 .content::-webkit-scrollbar { 
-    display: none; 
+    display: none;
 }
 
 .content ul {
@@ -116,7 +116,7 @@
     min-height: 45px;
     height: 45px;
 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(72, 72, 74, .5);
     position: relative;
     
     padding: 0;
@@ -245,4 +245,10 @@
 
     color: var(--white);
     opacity: 70%;
+}
+
+@media (max-width: 680px) {
+    .container {
+        
+    }
 }

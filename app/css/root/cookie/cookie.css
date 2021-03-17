@@ -6,12 +6,14 @@
 */
 
 #cookie {
-    display: none;
+    font-family: 'Rubik', sans-serif;
 
     box-sizing: border-box;
+    display: none;
 
     bottom: 0;
     left: 0;
+
     position: fixed;
     width: 100%;
 
@@ -73,8 +75,11 @@
 
     height: 25px;
     width: 25px;
+}
 
+#cookie .content .close:hover {
     cursor: pointer;
+    opacity: 70%;
 }
 
 #cookie .content.close-animation {
