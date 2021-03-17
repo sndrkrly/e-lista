@@ -43,6 +43,8 @@ function getCookie(name) {
     return "";
 }
 
+initCookie("cookie-status", 0, 30);
+
 function checkCookie() {
     var status = getCookie("cookie-status");
 
