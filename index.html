@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="app/css/root/root.css">
     <link rel="stylesheet" href="app/css/root/font/awesome.css">
 
+    <link rel="stylesheet" href="app/css/root/tooltip/tooltip.css">
     <link rel="stylesheet" href="app/css/root/cookie/cookie.css">
 
     <link rel="stylesheet" href="app/css/home/home.css">
@@ -40,17 +41,31 @@
 <div class="wrapper">
     <div class="container">
         <div class="header">
-            <div class="refresh-list"><i class="fa fa-refresh"></i></div>
-            <div class="save-list"><i class="fa fa-heart"></i></div>
-            <div class="saved-list">
-                <a href="lists.html">
-                    <i class="fa fa-bookmark"></i>
-                </a>
+            <div class="refresh-list">
+                <div class="tooltip">
+                    <i class="fa fa-refresh"></i>
+                    
+                    <span class="text">
+                        Új lista
+                    </span>
+                </div>
             </div>
 
-            <div class="title">
-                <input type="text" id="input" placeholder="Lista #1">
-            </div>
+            <!--
+                <div class="save-list"><i class="fa fa-heart"></i>
+                    <div class="saved-list">
+                        <a href="public/saved-list.html">
+                            <i class="fa fa-bookmark"></i>
+                        </a>
+                    </div>
+                </div>
+            -->
+
+            <!--
+                <div class="title">
+                    <input type="listName" id="listName" placeholder="Névtelen Lista">
+                </div>
+            -->
 
             <div class="date"></div>
         </div>

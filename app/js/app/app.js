@@ -36,6 +36,8 @@ $(".header .refresh-list").bind("click", function() {
     if (hasItems) {
         localStorage.clear();
         location.reload();
+
+        // $(".header .title").html("Lista #" + (id++));
     } else {
         console.log("üres, nincs mit törölni");
     }
@@ -49,6 +51,7 @@ $(document).ready(function() {
         day: "numeric"
     };
 
+    // $(".header .title").html("Lista #" + (id++));
     $(".header .date").html(currentDate.toLocaleDateString("hu-HU", dateOptions));
 });
 
@@ -71,20 +74,19 @@ function addToDo(toDo, id, done, trash) {
 
 $(document).bind("keyup", function(event) {
     if (event.keyCode == 13) {
-        var toDo = $(".add-to-do input").val();
+        var thingToShop = $(".add-to-do input").val();
 
-        if (toDo.length > 0 && toDo != "Elem hozzáadása") {
-            addToDo(toDo, id, false, false);
+        if (thingToShop.length > 0 && thingToShop != "Elem hozzáadása") {
+            addToDo(thingToShop, id, false, false);
             
             LIST.push({
-                name : toDo,
+                name : thingToShop,
                 id : id,
                 done : false,
                 trash : false
             });
             
-            localStorage.setItem("TODO", JSON.stringify(LIST));
-            
+            localStorage.setItem("TODO", JSON.stringify(LIST));     
             id++;
         }
 
@@ -120,6 +122,14 @@ $("#list").bind("click", function() {
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
 
+/*
 $(".header .save-list").bind("click", function() {
-    console.log("mentve a lista");
+    $(".header .popup").css("display", "unset");
+    $(".header .popup").html("Elmentve!");
+    $('.header .popup').addClass('close-animation');
+     
+    setTimeout(function() {
+        $('.header .popup').css("display", "none");
+    }, 1000);
 });
+*/
