@@ -19,10 +19,15 @@
     height: 200px;
     width: 380px;
 
-    background-color: rgba(28, 28, 30, 90%);
-    
-    border-radius: 20px 20px 0 0;
-    
+    /*
+        background-color: rgba(28, 28, 30, 100%);
+    */
+
+    background-image: url("../../../src/images/header/header.png");
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+
+    border-radius: 30px 30px 0 0;
     position: relative;
 }
 
@@ -86,79 +91,84 @@
     cursor: pointer;
 }
 
-.header .popup {
+.header .title input {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+
     position: absolute;
 
-    height: 35px;
-    width: 310px;
+    height: 45px;
+    width: 160px;
 
-    left: 20px;
+    left: 18px;
     top: 80px;
 
     background-color: transparent;
-    font-size: 20px;
+    font-size: 25px;
     border: none;
 
     color: var(--white);
     opacity: 100%;
 }
 
-.header .title input {
-    position: absolute;
-
-    height: 35px;
-    width: 310px;
-
-    left: 20px;
-    top: 80px;
-
-    background-color: transparent;
-    font-size: 20px;
-    border: none;
-
-    color: var(--white);
-    opacity: 100%;
+.header .title input:focus{
+    outline: none;
 }
 
 .header .title input::-webkit-input-placeholder {
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
 
     color: var(--white);
-    opacity: 70%;
 }
 
 .header .title input::-moz-placeholder {
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
 
     color: var(--white);
-    opacity: 70%;
 }
 
 .header .title input:-ms-input-placeholder {
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
 
     color: var(--white);
-    opacity: 70%;
 }
 
 .header .title input:-moz-placeholder {
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
 
     color: var(--white);
-    opacity: 70%;
 }
 
 .header .date {
     position: absolute;
-    left: 20px;
-    top: 110px;
+    
+    /*
+    line-height: 20px;
+    width: 150px;
+    */
 
-    font-size: 25px;
+    left: 20px;
+    top: 115px;
+
+    font-size: 20px;
     color: var(--white);
+
+    opacity: 70%;
+}
+
+.header .right-flat-image {
+    margin-right: 150px;
+    margin-top: 25px;
+
+    display: block;
+    float: right;
+
+    height: 25px;
+    width: 25px;
 }
 
 .content {
@@ -166,7 +176,7 @@
     height: 350px;
     width: 380px;
 
-    background-color: rgb(44, 44, 46);
+    background-color: rgb(34, 34, 36);
     overflow: auto;
 }
 
@@ -177,6 +187,8 @@
 .content ul {
     padding: 0;
     margin: 0;
+
+    margin-bottom: 5px;
 }
 
 /* Items */
@@ -219,12 +231,12 @@
     position: absolute;
 
     left: 50px;
-    top: 5px;
+    top: 10px;
     
     padding: 0;
     margin: 0;
 
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .lineThrough {
@@ -235,10 +247,10 @@
 .item i.de {
     position: absolute;
 
-    font-size: 20px;
+    font-size: 18px;
 
     right: 15px;
-    top: 11px;
+    top: 13px;
 }
 
 .item i.de:hover {
@@ -257,7 +269,7 @@
     padding: 10px;
     background-color: rgb(28, 28, 30);
 
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 30px 30px;
 }
 
 .add-to-do i {
@@ -280,16 +292,19 @@
     left: 50px;
 
     background-color: transparent;
-    font-size: 20px;
+    font-size: 15px;
     border: none;
 
     color: var(--white);
     opacity: 100%;
 }
 
+.add-to-do input:focus{
+    outline: none;
+}
+
 .add-to-do input::-webkit-input-placeholder {
     font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
 
     color: var(--white);
     opacity: 70%;
@@ -297,7 +312,6 @@
 
 .add-to-do input::-moz-placeholder {
     font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
 
     color: var(--white);
     opacity: 70%;
@@ -305,7 +319,6 @@
 
 .add-to-do input:-ms-input-placeholder {
     font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
 
     color: var(--white);
     opacity: 70%;
@@ -313,7 +326,6 @@
 
 .add-to-do input:-moz-placeholder {
     font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
 
     color: var(--white);
     opacity: 70%;

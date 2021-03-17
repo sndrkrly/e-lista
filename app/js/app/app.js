@@ -45,18 +45,19 @@ $(".header .refresh-list").bind("click", function() {
 
 $(document).ready(function() {
     const currentDate = new Date();
-    const dateOptions = {
+    const numericDateResult = currentDate.toLocaleDateString("hu-HU", {
         weekday : "long", 
         month: "long", 
         day: "numeric"
-    };
+    });
 
-    // $(".header .title").html("Lista #" + (id++));
-    $(".header .date").html(currentDate.toLocaleDateString("hu-HU", dateOptions));
+    $(".header .date").html(numericDateResult);
 });
 
 function addToDo(toDo, id, done, trash) {
-    if (trash) { return; }
+    if (trash) { 
+        return; 
+    }
     
     const DONE = done ? CHECK : UNCHECK;
     const LINE = done ? LINE_THROUGH : "";
@@ -88,13 +89,8 @@ $(document).bind("keyup", function(event) {
                 });
                 
                 localStorage.setItem("TODO", JSON.stringify(LIST));     
-                id++;
             } else {
-                $(".header .popup").html("Túl hosszú név!");
-
-                setTimeout(function() {
-                    $(".header .popup").html("");
-                }, 1000);
+                return;
             }
         }
 
