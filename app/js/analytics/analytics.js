@@ -1,7 +1,7 @@
 /* 
-    Created by Király Sándor on 03/16/21.
+    Created by Sándor Király on 03/17/21.
 
-    Copyright © Király Sándor.
+    Copyright © Sándor Király.
     All rights reserved.
 */
 

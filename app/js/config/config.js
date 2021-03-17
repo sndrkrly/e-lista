@@ -1,7 +1,7 @@
 /* 
-    Created by Király Sándor on 03/16/21.
+    Created by Sándor Király on 03/17/21.
 
-    Copyright © Király Sándor.
+    Copyright © Sándor Király.
     All rights reserved.
 */
 
@@ -12,7 +12,7 @@ import '../jquery/jquery-3.6.0.min.js';
 //
 
 $(window).config = {
-    'path': 'https://www.sandorkiraly.netlify.app',
+    'path': 'https://www.e-lista.netlify.app',
     'timezone': 'UTC',
     'date_locale': 'en',
     'date_format': 'L',

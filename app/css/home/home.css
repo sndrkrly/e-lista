@@ -1,0 +1,248 @@
+/* 
+    Created by Sándor Király on 03/17/21.
+
+    Copyright © Sándor Király.
+    All rights reserved.
+*/
+
+.container {
+    padding: 10px;
+    margin: 0 auto;
+    
+    width: 380px;
+}
+
+.header {
+    height: 200px;
+    width: 380px;
+
+    background-color: rgba(28, 28, 30, 90%);
+    
+    border-radius: 20px 20px 0 0;
+    
+    position: relative;
+}
+
+.header .refresh-list {
+    width : 30px;
+    height: 30px;
+
+    left: 20px;
+    top: 20px;
+
+    position: absolute;
+}
+
+.header .refresh-list i {
+    font-size: 25px;
+    color: var(--white);
+}
+
+.header .refresh-list i:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+.header .save-list {
+    width : 30px;
+    height: 30px;
+
+    right: 20px;
+    top: 20px;
+
+    position: absolute;
+}
+
+.header .save-list i {
+    font-size: 25px;
+    color: var(--white);
+}
+
+.header .save-list i:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+.header .saved-list {
+    width : 30px;
+    height: 30px;
+
+    right: 55px;
+    top: 20px;
+
+    position: absolute;
+}
+
+.header .saved-list i {
+    font-size: 25px;
+    color: var(--white);
+}
+
+.header .saved-list i:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+#date {
+    position: absolute;
+
+    bottom: 10px;
+    left: 10px;
+
+    font-size: 25px;
+    color: var(--white);
+}
+
+.content {
+    max-height: 350px;
+    height: 350px;
+    width: 380px;
+
+    background-color: rgb(44, 44, 46);
+    overflow: auto;
+}
+
+.content::-webkit-scrollbar { 
+    display: none; 
+}
+
+.content ul {
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    width: 380px;
+    min-height: 45px;
+    height: 45px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+    color: var(--white);
+}
+
+.item i.co {
+    position: absolute;
+
+    padding-left: 5px;
+    left: 15px;
+    top: 10px;
+    
+    font-size: 25px;
+}
+
+.item i.co:hover {
+    cursor: pointer;
+}
+
+.fa-check-circle {
+    color: var(--green);
+}
+
+.item p.text {
+    max-width: 285px;
+    position: absolute;
+
+    left: 50px;
+    top: 5px;
+    
+    padding: 0;
+    margin: 0;
+
+    font-size: 20px;
+}
+
+.lineThrough {
+    text-decoration: line-through;
+    opacity: 70%;
+}
+
+.item i.de {
+    position: absolute;
+
+    font-size: 20px;
+
+    right: 15px;
+    top: 11px;
+}
+
+.item i.de:hover {
+    color: var(--pink);
+    cursor: pointer;
+}
+
+.add-to-do {
+    position: relative;
+
+    width: 360px;
+    height: 40px;
+
+    padding: 10px;
+    background-color: rgb(28, 28, 30);
+
+    border-radius: 0px 0px 20px 20px;
+}
+
+.add-to-do i {
+    position: absolute;
+    color: var(--white);
+
+    padding-left: 5px;
+    padding-top: 7px;
+
+    font-size: 25px;
+}
+
+.add-to-do input {
+    position: absolute;
+
+    height: 35px;
+    width: 310px;
+
+    padding-left:10px;
+    left: 50px;
+
+    background-color: transparent;
+    font-size: 20px;
+    border: none;
+
+    color: var(--white);
+    opacity: 100%;
+}
+
+.add-to-do input::-webkit-input-placeholder {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+
+    color: var(--white);
+    opacity: 70%;
+}
+
+.add-to-do input::-moz-placeholder {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+
+    color: var(--white);
+    opacity: 70%;
+}
+
+.add-to-do input:-ms-input-placeholder {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+
+    color: var(--white);
+    opacity: 70%;
+}
+
+.add-to-do input:-moz-placeholder {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+
+    color: var(--white);
+    opacity: 70%;
+}

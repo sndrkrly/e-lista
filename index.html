@@ -1,66 +1,81 @@
 <!DOCTYPE html>
 <html lang="hu-HU">
 <head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="hu-HU">
 
-	<title>e-Lista</title>
+    <meta name="author" content="Király Sándor">
+    <link rel="icon" href="src/icons/favicon/favicon.svg" type="image/x-icon">
+        
+    <meta name="description" content="Egy webes applikáció amelyben bevásárlói listát lehet létrehozni.">
+    <meta name="keywords" content="shop, social network, webshop, social network webshop">
 
-	<meta name="title" content="To-Do"/>
-    <meta name="description" content="Egy webes applikáció amelyben bevásárlói listát lehet létrehozni."/>
+    <title>e-Lista</title>
 
-    <meta property="og:title" content="e-Lista"/>
-    <meta property="og:description" content="Egy webes applikáció amelyben bevásárlói listát lehet létrehozni."/>
+    <meta property="og:title" content="Király Sándor">
+    <meta property="og:image" content="src/icons/favicon/favicon.svg">
+    <meta property="og:description" content="Egy webes applikáció amelyben bevásárlói listát lehet létrehozni.">
 
-    <meta name="keywords" content="e-Lista, webes applikáció, applikáció, web, bevásárlói lista"/>
-    <meta name="author" content="Király Sándor <sandorkiraly.dev@gmail.com>"/>
-
-    <link rel="icon" href="src/icons/ui/favicon/favicon.svg" type="image/x-icon"/>
-    <meta property="og:image" content="src/icons/ui/favicon/favicon.svg"/>
-    <meta name="theme-color" content="#ffffff"/>
-
-    <script type="module" src="app/js/jquery/jquery-3.6.0.min.js"></script>
     <script type="module" src="app/js/analytics/analytics.js"></script>
+    <script type="module" src="app/js/jquery/jquery-3.6.0.min.js"></script>
 
     <script type="module" src="app/js/config/config.js"></script>
-    <script type="module" src="app/js/header/header.js"></script>
     <script type="module" src="app/js/cookie/cookie.js"></script>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/v4-shims.css">
+    <script type="module" src="app/js/app/app.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="app/css/root/root.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web">
 
-    <link rel="stylesheet" type="text/css" href="app/css/ui/cookies/cookies.css"/>
-    <link rel="stylesheet" type="text/css" href="app/css/ui/header/header.css"/>
-    <link rel="stylesheet" type="text/css" href="app/css/ui/footer/footer.css"/>
+    <link rel="stylesheet" href="app/css/root/root.css">
+    <link rel="stylesheet" href="app/css/root/font/awesome.css">
+
+    <link rel="stylesheet" href="app/css/root/cookie/cookie.css">
+
+    <link rel="stylesheet" href="app/css/home/home.css">
 </head>
 <body>
 
 <div class="wrapper">
-	<!-- -->
-</div>
+    <div class="container">
+        <div class="header">
+            <div class="refresh-list">
+                <i class="fa fa-refresh"></i>
+            </div>
 
-<div id="footer">
-    <div class="content">
-        <div class="author">
-            Copyright © Sándor Király. <br> Minden jog fenntartva. <br><br>
-            <a href="https://www.sandorkiraly.netlify.app">
-            	Made with <i class="fa fa-heart"></i> in Hungary
-            </a>
+            <div class="save-list">
+                <i class="fa fa-heart"></i>
+            </div>
+
+            <div class="saved-list">
+                <i class="fa fa-bookmark"></i>
+            </div>
+
+            <div id="date"></div>
+        </div>
+
+        <div class="content">
+            <ul id="list"></ul>
+        </div>
+
+        <div class="add-to-do">
+            <i class="fa fa-reply"></i>
+            <input type="text" id="input" placeholder="Elem hozzáadása">
         </div>
     </div>
-</div>
 
+    <div class="separator"></div>
+</div>
 
 <div id="cookie">
     <div class="content">
         <div class="icon">
-            <img src="src/icons/ui/cookies/cookie.png" width="30" height="30">
+            <img src="src/icons/cookie/cookie.png" width="30" height="30">
         </div>
 
         <div class="close">
-            <img src="src/icons/ui/cookies/cookie-close.png" width="16" height="16">
+            <img src="src/icons/cookie/cookie-close.png" width="16" height="16">
         </div>
 
         <div class="title">
