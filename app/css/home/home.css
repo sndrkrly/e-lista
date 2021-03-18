@@ -47,15 +47,15 @@
 }
 
 .header .undo-list i:hover {
-    opacity: 70%;
     cursor: pointer;
+    color: rgb(255, 55, 95);
 }
 
 .header .save-list {
     width : 30px;
     height: 30px;
 
-    right: 20px;
+    right: 10px;
     top: 20px;
 
     position: absolute;
@@ -67,28 +67,22 @@
 }
 
 .header .save-list i:hover {
-    opacity: 70%;
     cursor: pointer;
+    color: rgb(255, 214, 10);
 }
 
-.header .saved-list {
-    width : 30px;
-    height: 30px;
-
-    right: 55px;
-    top: 20px;
-
+.header .popup {
     position: absolute;
-}
+    height: 45px;
 
-.header .saved-list i {
-    font-size: 25px;
+    left: 18px;
+    top: 150px;
+
+    font-size: 20px;
+    border: none;
+
     color: var(--white);
-}
-
-.header .saved-list i:hover {
-    opacity: 70%;
-    cursor: pointer;
+    opacity: 100%;   
 }
 
 .header .title input {
@@ -145,11 +139,6 @@
 
 .header .date {
     position: absolute;
-    
-    /*
-    line-height: 20px;
-    width: 150px;
-    */
 
     left: 20px;
     top: 115px;
@@ -157,18 +146,7 @@
     font-size: 20px;
     color: var(--white);
 
-    opacity: 70%;
-}
-
-.header .right-flat-image {
-    margin-right: 150px;
-    margin-top: 25px;
-
-    display: block;
-    float: right;
-
-    height: 25px;
-    width: 25px;
+    opacity: 80%;
 }
 
 .content {

@@ -7,125 +7,150 @@
 
 import '../jquery/jquery-3.6.0.min.js';
 
-const CHECK = "fa-check-circle";
-const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
-let LIST, id;
-let data = localStorage.getItem("TODO");
+const UNCHECK = "fa-circle-thin";
+const CHECK = "fa-check-circle";
 
-if (data) {
-    LIST = JSON.parse(data);
-    id = LIST.length;
+let thingsToBuyList, thingsToBuyID;
+let thingsToBuyData = localStorage.getItem("thingsToBuyData");
 
-    loadList(LIST);
-} else {
-    LIST = [];
-    id = 0;
-}
+$(document).ready(function() {
+    $.getScript("app/js/cookie/cookie.js", function() {
+        const listName = getCookie("lastEditedListName");
 
-function loadList(array) {
-    array.forEach(function(item) {
-        addToDo(item.name, item.id, item.done, item.trash);
+        if (listName != "") {
+            document.title = listName;
+        } else {
+            document.title = "Lista #1";
+        }
+        
+        $(".header .title input").val(listName);
+    });
+
+    if (thingsToBuyData) {
+        thingsToBuyList = JSON.parse(thingsToBuyData);
+        thingsToBuyID = thingsToBuyList.lenght;
+
+        loadThingsToBuy(thingsToBuyList);
+    } else {
+        thingsToBuyList = [];
+        thingsToBuyID = 0;
+    }
+});
+
+function loadThingsToBuy(array) {
+    array.forEach(function(thing) {
+        addThingToBuy(thing.name, thing.id, thing.have, thing.trash);
     });
 }
 
-$(".header .undo-list").bind("click", function() {
-    let hasItems = localStorage.getItem("TODO");
+function addThingToBuy(name, id, have, trash) {
+    if (trash) { return; }
 
-    if (hasItems) {
-        localStorage.clear();
-        location.reload();
-    } else {
-        console.log("üres, nincs mit törölni");
-    }
+    const HAVE = have ? CHECK : UNCHECK;
+    const LINE = have ? LINE_THROUGH : "";
+
+    const item = `<li class="item">
+                    <i class="fa ${HAVE} co" job="complete" id="${id}"></i>
+                    <p class="text ${LINE}">${name}</p>
+                    <i class="fa fa-times de" job="delete" id="${id}"></i>
+                  </li>
+                `;
+
+    const position = "beforeend";
+    list.insertAdjacentHTML(position, item);       
+}
+
+function buyThing(element) {
+    element.classList.toggle(CHECK);
+    element.classList.toggle(UNCHECK);
+    element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+    
+    thingsToBuyList[element.id].have = thingsToBuyList[element.id].have ? false : true;
+}
+
+function deleteThing(element) {
+    element.parentNode.parentNode.removeChild(element.parentNode);
+    thingsToBuyList[element.id].trash = true;
+}
+
+$(".header .undo-list").bind("click", function() {
+    localStorage.clear();
+    location.reload();
+
+    $.getScript("app/js/cookie/cookie.js", function() {
+        $(".add-to-do input").val("");
+        initCookie("lastEditedListName", "", 30);
+    });
 });
 
 $(document).ready(function() {
     const currentDate = new Date();
-    const numericDateResult = currentDate.toLocaleDateString("hu-HU", {
+    const dateOptions = {
         weekday : "long", 
         month: "long", 
         day: "numeric"
-    });
+    };
 
-    $(".header .date").html(numericDateResult);
+    $(".header .date").html(currentDate.toLocaleDateString("hu-HU", dateOptions));
 });
-
-function addToDo(toDo, id, done, trash) {
-    if (trash) { 
-        return; 
-    }
-    
-    const DONE = done ? CHECK : UNCHECK;
-    const LINE = done ? LINE_THROUGH : "";
-    
-    const item = `<li class="item">
-                    <i class="fa ${DONE} co" job="complete" id="${id}"></i>
-                    <p class="text ${LINE}">${toDo}</p>
-                    <i class="fa fa-times de" job="delete" id="${id}"></i>
-                  </li>
-                `;
-    
-    const position = "beforeend";
-    list.insertAdjacentHTML(position, item);
-}
 
 $(document).bind("keyup", function(event) {
     if (event.keyCode == 13) {
         var thingToShop = $(".add-to-do input").val();
 
         if (thingToShop.length > 0 && thingToShop != "Elem hozzáadása") {
-            var maximumLenght = 28;
-
-            if (/Mobi|Tablet|iPad|iPhone/.test(navigator.userAgent)) {
-                maximumLenght = 40;
-            }
+            addThingToBuy(thingToShop, thingsToBuyID, false, false);
             
-            if (thingToShop.length < maximumLenght) {
-                addToDo(thingToShop, id, false, false);
-                
-                LIST.push({
-                    name : thingToShop,
-                    id : id,
-                    done : false,
-                    trash : false
-                });
-                
-                localStorage.setItem("TODO", JSON.stringify(LIST));     
-            } else {
-                return;
-            }
+            thingsToBuyList.push({
+                name: thingToShop,
+                id: thingsToBuyID,
+                have: false,
+                trash: false
+            });
+            
+            localStorage.setItem("thingsToBuyData", JSON.stringify(thingsToBuyList));
+            thingsToBuyID++;
         }
 
         $(".add-to-do input").val("");
     }
 });
 
-function completeToDo(element) {
-    element.classList.toggle(CHECK);
-    element.classList.toggle(UNCHECK);
-
-    element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
-    
-    LIST[element.id].done = LIST[element.id].done ? false : true;
-}
-
-function removeToDo(element) {
-    element.parentNode.parentNode.removeChild(element.parentNode);
-    
-    LIST[element.id].trash = true;
-}
-
-$("#list").bind("click", function() {
+$("#list").bind("click", function(event) {
     const element = event.target;
     const elementJob = element.attributes.job.value;
     
     if (elementJob == "complete") {
-        completeToDo(element);
+        buyThing(element);
     } else if (elementJob == "delete") {
-        removeToDo(element);
+        deleteThing(element);
     }
     
-    localStorage.setItem("TODO", JSON.stringify(LIST));
+    localStorage.setItem("thingsToBuyData", JSON.stringify(thingsToBuyList));
+});
+
+$(".header .save-list").bind("click", function() {
+    const LIST_NAME = $(".header .title input").val();
+    const LIST_DATAS = thingsToBuyData;
+
+    if (LIST_NAME.length == 0) {
+        $(".header .popup").html("Nincs megadva lista név!");
+        
+        setTimeout(function() {
+            $('.header .popup').html("");
+        }, 1000);
+
+        return;
+    }
+    
+    const listSaveJSON = '{"listName": "' + LIST_NAME + '", "listDatas": "' + LIST_DATAS + '"}';
+
+    $.getScript("app/js/cookie/cookie.js", function() {
+        var savedArrayJSON = JSON.parse(listSaveJSON);
+
+        document.title = savedArrayJSON.listName;
+        initCookie("lastEditedListName", savedArrayJSON.listName, 30);
+    });
 });

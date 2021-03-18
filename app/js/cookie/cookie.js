@@ -5,20 +5,11 @@
     All rights reserved.
 */
 
-import '../jquery/jquery-3.6.0.min.js';
-
-$(window).ready(function() {
-    checkCookie();
-});
-
 function initCookie(name, value, days) {  
     var currentlyDate = new Date();
-    currentlyDate.setTime(
-        currentlyDate.getTime() + (days * 24 * 60 * 60 * 1000)
-    );
+    currentlyDate.setTime(currentlyDate.getTime() + (days * 24 * 60 * 60 * 1000));
 
     var expires = "expires=" + currentlyDate.toGMTString();
-
     document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
 
@@ -42,28 +33,3 @@ function getCookie(name) {
 
     return "";
 }
-
-// initCookie("cookie-status", 0, 30);
-
-function checkCookie() {
-    var status = getCookie("cookie-status");
-
-    if (status == 1) {
-        $('#cookie').css("display", "none");
-    } else {
-        if (/Mobi|Tablet|iPad|iPhone/.test(navigator.userAgent)) {
-            return;
-        } else {
-            $('#cookie').css("display", "flex");
-            $('#cookie .content .close').click(function() {
-                $('#cookie .content').addClass('close-animation');
-                    
-                setTimeout(function() {
-                    $('#cookie .content').css("display", "none");
-                }, 1000);
-
-                initCookie("cookie-status", 1, 30);
-            });
-        }
-    }
-};
