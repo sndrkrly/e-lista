@@ -5,18 +5,18 @@
     All rights reserved.
 */
 
-import '../jquery/jquery-3.6.0.min.js';
+import '../jquery/index.js';
+
+const CHECK = "fa-check-square";
+const UNCHECK = "fa-square";
 
 const LINE_THROUGH = "lineThrough";
-
-const UNCHECK = "fa-circle-thin";
-const CHECK = "fa-check-circle";
 
 let thingsToBuyList, thingsToBuyID;
 let thingsToBuyData = localStorage.getItem("thingsToBuyData");
 
 $(document).ready(function() {
-    $.getScript("app/js/cookie/cookie.js", function() {
+    $.getScript("app/js/cookie/index.js", function() {
         const listName = getCookie("lastEditedListName");
 
         if (listName != "") {
@@ -25,7 +25,7 @@ $(document).ready(function() {
             document.title = "Lista #1";
         }
         
-        $(".header .title input").val(listName);
+        $("#container .header .title input").val(listName);
     });
 
     if (thingsToBuyData) {
@@ -40,13 +40,15 @@ $(document).ready(function() {
 });
 
 function loadThingsToBuy(array) {
-    array.forEach(function(thing) {
-        addThingToBuy(thing.name, thing.id, thing.have, thing.trash);
+    array.forEach(function(v) {
+        addThingToBuy(v.name, v.id, v.have, v.trash);
     });
 }
 
 function addThingToBuy(name, id, have, trash) {
-    if (trash) { return; }
+    if (trash) { 
+        return; 
+    }
 
     const HAVE = have ? CHECK : UNCHECK;
     const LINE = have ? LINE_THROUGH : "";
@@ -65,8 +67,9 @@ function addThingToBuy(name, id, have, trash) {
 function buyThing(element) {
     element.classList.toggle(CHECK);
     element.classList.toggle(UNCHECK);
+
     element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
-    
+     
     thingsToBuyList[element.id].have = thingsToBuyList[element.id].have ? false : true;
 }
 
@@ -75,46 +78,46 @@ function deleteThing(element) {
     thingsToBuyList[element.id].trash = true;
 }
 
-$(".header .undo-list").bind("click", function() {
+$("#container .header .undo-list").bind("click", function() {
     localStorage.clear();
     location.reload();
 
-    $.getScript("app/js/cookie/cookie.js", function() {
-        $(".add-to-do input").val("");
+    $.getScript("app/js/cookie/index.js", function() {
+        $("#container .add-an-item input").val("");
         initCookie("lastEditedListName", "", 30);
     });
 });
 
 $(document).ready(function() {
     const currentDate = new Date();
-    const dateOptions = {
+    const currentDateOptions = {
         weekday : "long", 
         month: "long", 
         day: "numeric"
     };
 
-    $(".header .date").html(currentDate.toLocaleDateString("hu-HU", dateOptions));
+    $("#container .header .date").html(currentDate.toLocaleDateString("hu-HU", currentDateOptions).replace(",", " · ").replace(".", " "));
 });
 
 $(document).bind("keyup", function(event) {
     if (event.keyCode == 13) {
-        var thingToShop = $(".add-to-do input").val();
+        var thingToShop = $("#container .add-an-item input").val();
 
         if (thingToShop.length > 0 && thingToShop != "Elem hozzáadása") {
             addThingToBuy(thingToShop, thingsToBuyID, false, false);
             
             thingsToBuyList.push({
-                name: thingToShop,
-                id: thingsToBuyID,
-                have: false,
-                trash: false
+                "name": thingToShop,
+                "id": thingsToBuyID,
+                "have": false,
+                "trash": false
             });
             
             localStorage.setItem("thingsToBuyData", JSON.stringify(thingsToBuyList));
             thingsToBuyID++;
         }
 
-        $(".add-to-do input").val("");
+        $("#container .add-an-item input").val("");
     }
 });
 
@@ -131,23 +134,24 @@ $("#list").bind("click", function(event) {
     localStorage.setItem("thingsToBuyData", JSON.stringify(thingsToBuyList));
 });
 
-$(".header .save-list").bind("click", function() {
-    const LIST_NAME = $(".header .title input").val();
+$("#container .header .save-list").bind("click", function() {
+    const LIST_NAME = $("#container .header .title input").val();
     const LIST_DATAS = thingsToBuyData;
 
     if (LIST_NAME.length == 0) {
-        $(".header .popup").html("Nincs megadva lista név!");
+        $("#container .header .popup").html("Nincs megadva lista név!");
         
         setTimeout(function() {
-            $('.header .popup').html("");
+            $('#container .header .popup').html("");
         }, 1000);
 
         return;
     }
     
-    const listSaveJSON = '{"listName": "' + LIST_NAME + '", "listDatas": "' + LIST_DATAS + '"}';
+    //const listSaveJSON = '{"listName": "' + LIST_NAME + '", "listDatas": "' + LIST_DATAS + '"}';
+    const listSaveJSON = '{"listName": "' + LIST_NAME + '"}';
 
-    $.getScript("app/js/cookie/cookie.js", function() {
+    $.getScript("app/js/cookie/index.js", function() {
         var savedArrayJSON = JSON.parse(listSaveJSON);
 
         document.title = savedArrayJSON.listName;

@@ -5,7 +5,7 @@
     All rights reserved.
 */
 
-import '../jquery/jquery-3.6.0.min.js';
+import '../jquery/index.js';
 
 //
 // .netlify.app => .com/.hu/.org/.net

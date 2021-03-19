@@ -18,31 +18,46 @@
     <meta property="og:image" content="src/icons/favicon/favicon.svg">
     <meta property="og:description" content="Egy webes applikáció amelyben bevásárlói listát lehet létrehozni.">
 
-    <script type="module" src="app/js/analytics/analytics.js"></script>
-    <script type="module" src="app/js/jquery/jquery-3.6.0.min.js"></script>
+    <script type="module" src="app/js/analytics/index.js"></script>
+    <script type="module" src="app/js/jquery/index.js"></script>
+    <script type="module" src="app/js/config/index.js"></script>
 
-    <script type="module" src="app/js/config/config.js"></script>
-    <script type="module" src="app/js/cookie/cookie.js"></script>
-
-    <script type="module" src="app/js/app/app.js"></script>
+    <script type="module" src="app/js/app/index.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web">
 
-    <link rel="stylesheet" href="app/css/root/root.css">
-    <link rel="stylesheet" href="app/css/root/font/awesome.css">
+    <link rel="stylesheet" href="app/css/root/root/style.css">
+    <link rel="stylesheet" href="app/css/root/font/style.css">
 
-    <link rel="stylesheet" href="app/css/root/footer/footer.css">
-    <link rel="stylesheet" href="app/css/root/cookie/cookie.css">
+    <link rel="stylesheet" href="app/css/ui/footer/style.css">
+    <link rel="stylesheet" href="app/css/ui/tooltip/style.css">
 
-    <link rel="stylesheet" href="app/css/home/home.css">
+    <link rel="stylesheet" href="app/css/public/home/style.css">
 </head>
 <body>
 
 <div class="wrapper">
-    <div class="container">
+    <div id="container">
         <div class="header">
-            <div class="undo-list"><i class="fa fa-undo"></i></div>
-            <div class="save-list"><i class="fa fa-star"></i></div>
+            <div class="undo-list">
+                <div id="tooltip">
+                    <i class="fa fa-undo"></i>
+
+                    <span class="tooltip-left">
+                        Új lista
+                    </span>
+                </div>
+            </div>
+
+            <div class="save-list">
+                <div id="tooltip">
+                    <i class="fa fa-star"></i>
+
+                    <span class="tooltip-right">
+                        Mentés
+                    </span>
+                </div>
+            </div>
 
             <div class="popup"></div>
             <div class="title">
@@ -56,8 +71,8 @@
             <ul id="list"></ul>
         </div>
 
-        <div class="add-to-do">
-            <i class="fa fa-podcast"></i>
+        <div class="add-an-item">
+            <i class="fa fa-reply-all"></i>
             <input type="text" id="input" placeholder="Elem hozzáadása">
         </div>
     </div>
@@ -71,22 +86,6 @@
         <a href="https://sandorkiraly.netlify.app">
             Made with <i class="fa fa-heart"></i> in Hungary
         </a>
-    </div>
-</div>
-
-<div id="cookie">
-    <div class="content">
-        <div class="icon">
-            <img src="src/icons/cookie/cookie.png" width="30" height="30">
-        </div>
-
-        <div class="close">
-            <img src="src/icons/cookie/cookie-close.png" width="16" height="16">
-        </div>
-
-        <div class="title">
-            Oldalunk sütiket használ, azzal hogy tovább böngészel, <a href="">elfogadod az adatvédelmi nyilatkozatunkat.</a>
-        </div>
     </div>
 </div>
 
