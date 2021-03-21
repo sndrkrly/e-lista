@@ -6,8 +6,10 @@
 */
 
 #footer {
-    font-family: "Rubik", sans-serif;
-    font-weight: 500;
+    font-family: "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+    letter-spacing: -0.54px;
+    line-height: 25px;
 
     padding: 72px 72px 0 72px;
     margin: 0 auto;

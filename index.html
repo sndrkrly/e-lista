@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu-HU">
+<html class="responsive" lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,10 +24,9 @@
 
     <script type="module" src="app/js/app/index.js"></script>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web">
-
     <link rel="stylesheet" href="app/css/root/root/style.css">
     <link rel="stylesheet" href="app/css/root/font/style.css">
+    <link rel="stylesheet" href="app/css/ui/fonts/style.css">
 
     <link rel="stylesheet" href="app/css/ui/footer/style.css">
     <link rel="stylesheet" href="app/css/ui/tooltip/style.css">
@@ -36,49 +35,47 @@
 </head>
 <body>
 
-<div class="wrapper">
-    <div id="container">
-        <div class="header">
-            <div class="undo-list">
-                <div id="tooltip">
-                    <i class="fa fa-undo"></i>
+<div id="container">
+    <div class="header">
+        <div class="undo-list">
+            <div id="tooltip">
+                <i class="fa fa-undo"></i>
 
-                    <span class="tooltip-left">
-                        Új lista
-                    </span>
-                </div>
+                <span class="tooltip-left">
+                    Új lista
+                </span>
             </div>
-
-            <div class="save-list">
-                <div id="tooltip">
-                    <i class="fa fa-star"></i>
-
-                    <span class="tooltip-right">
-                        Mentés
-                    </span>
-                </div>
-            </div>
-
-            <div class="popup"></div>
-            <div class="title">
-                <input type="listName" id="listName" placeholder="Lista #1">
-            </div>
-
-            <div class="date"></div>
         </div>
 
-        <div class="content">
-            <ul id="list"></ul>
+        <div class="save-list">
+            <div id="tooltip">
+                <i class="fa fa-star"></i>
+
+                <span class="tooltip-right">
+                    Mentés
+                </span>
+            </div>
         </div>
 
-        <div class="add-an-item">
-            <i class="fa fa-reply-all"></i>
-            <input type="text" id="input" placeholder="Elem hozzáadása">
+        <div class="popup"></div>
+         <div class="title">
+            <input type="listName" id="listName" placeholder="Lista #1">
         </div>
+
+        <div class="date"></div>
     </div>
 
-    <div class="separator"></div>
+    <div class="content">
+        <ul id="list"></ul>
+    </div>
+
+    <div class="add-an-item">
+        <i class="fa fa-reply-all"></i>
+        <input type="text" id="input" placeholder="Elem hozzáadása">
+    </div>
 </div>
+
+<div class="separator"></div>
 
 <div id="footer">
     <div class="author">

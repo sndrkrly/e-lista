@@ -148,7 +148,6 @@ $("#container .header .save-list").bind("click", function() {
         return;
     }
     
-    //const listSaveJSON = '{"listName": "' + LIST_NAME + '", "listDatas": "' + LIST_DATAS + '"}';
     const listSaveJSON = '{"listName": "' + LIST_NAME + '"}';
 
     $.getScript("app/js/cookie/index.js", function() {
@@ -156,5 +155,13 @@ $("#container .header .save-list").bind("click", function() {
 
         document.title = savedArrayJSON.listName;
         initCookie("lastEditedListName", savedArrayJSON.listName, 30);
+    });
+});
+
+$(document).ready(function() {
+    $.getScript("app/js/cookie/index.js", function() {
+        $("#container .header .title input").on("change", function() {            
+            document.title = $("#container .header .title input").val();;
+        });
     });
 });
