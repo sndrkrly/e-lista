@@ -340,5 +340,6 @@
     .container {
         padding: 60px 0px 0px;
         height: 100px;
+        width: 50%;
     }
 }
